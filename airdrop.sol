@@ -17,7 +17,7 @@ contract Airdrop {
     address public owner;
     
     // address of the token to airdrop, can be changed
-    // with the "setTokenAddress function later"
+    // with the "setTokenAddress" function later
     address public _tokenAddress = 0x4197057a560F8ad619d11d59F15dF1fe967F0101;
     
     // number of tokens to send to each recipient
