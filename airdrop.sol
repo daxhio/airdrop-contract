@@ -13,4 +13,17 @@ contract ERC20Interface {
 }
 
 contract Airdrop {
+
+    address public owner;
+    address public _tokenAddress = 0x4197057a560F8ad619d11d59F15dF1fe967F0101;
+    
+    // number of tokens to send to each recipient
+    uint256 tokens = 10;
+    // decimals of the token
+    uint256 decimals = 9;
+    
+    constructor() public {
+        owner = msg.sender;
+    }
+    
 }
