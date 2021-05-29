@@ -48,4 +48,11 @@ contract Airdrop {
         _tokenAddress = _address;
     }
     
+    function withdrawTokens(address _tokenAddr) public {
+        require(msg.sender == owner, "only the owner remove");
+        require(ERC20Interface(_tokenAddr).balanceOf(address(this)) > 0, "can not withdraw 0 or negative");
+
+        require((ERC20Interface(_tokenAddr).transfer(owner, ERC20Interface(_tokenAddr).balanceOf(address(this))) ) == true);
+    }
+    
 }
