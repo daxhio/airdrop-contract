@@ -42,4 +42,10 @@ contract Airdrop {
         return true;
     }    
     
+    function setTokenAddress(address _address) public {
+        require(msg.sender == owner, "only the owner can set address");
+
+        _tokenAddress = _address;
+    }
+    
 }
