@@ -29,6 +29,11 @@ contract Airdrop {
         owner = msg.sender;
     }
     
+    //ex. to send the airdrop to 3 addresses the owner will have to call the multisend function
+    //in the form shown below:
+
+    //["0x11ac009fb6b3d1a857d07fb73893980d1e70d8b5", "0x2b9fc7f2fe038252a16a34334ede31dee7d10792", "0x798d0a37581dcbc3482c9ad4be4d63603a55d9f9"]      
+    
     function multisend(address[] _to) public  returns (bool _success) {
         require(msg.sender == owner, "only the owner can send airdrop");
         require(_to.length > 0);
