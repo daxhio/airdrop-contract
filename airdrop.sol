@@ -29,4 +29,17 @@ contract Airdrop {
         owner = msg.sender;
     }
     
+    function multisend(address[] _to) public  returns (bool _success) {
+        require(msg.sender == owner, "only the owner can send airdrop");
+        require(_to.length > 0);
+        
+        
+        // send the values to all the recipients
+        for (uint8 i = 0; i < _to.length; i++) {
+            require((ERC20Interface(_tokenAddress).transfer(_to[i], tokens * 10 ** decimals)) == true);
+        }
+
+        return true;
+    }    
+    
 }
